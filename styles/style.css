@@ -1,5 +1,104 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+ul {
+  list-style-type: none;
+}
+
+
+img {
+  width: 100px;
+}
+
 
 .page {
+  background-image: url(../images/cover-image-dark.png);
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0px;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
+
+.header {
+  position: relative;
+  display: grid;
+  min-height: 668px;
+  grid-template-rows: repeat(3, min-inline-size);
+  margin: 10px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.header__theme-menu-button { 
+  width: 70px;
+  text-transform: lowercase;
+  font-family: var(--font-family);
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.rec {
+  position: absolute;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: var(--text-normal);
+  text-transform: uppercase;
+  top: 10px;
+  right: 19px;
+  display: flex;
+  color: var(--accent-color);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.rec:after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 4.5px;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.headline {
+  font-size: var(--headline-font-size);
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
