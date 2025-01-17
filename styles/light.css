@@ -5,12 +5,16 @@
 */
 
 :root.theme-light {
-  --accent-color: #ff8dcb;
+  --text-color: #353430;
+  --accent-color: #FFC2E6;
   --background-color: #FFF1F7;
+  --headline-text-color: #FF8DCB;
+  --headline-shadow-color: #FFC2E6;
     /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
 
   .page {
     background-image: url(../images/cover-image-light.png);
@@ -20,4 +24,8 @@
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
+}
+
+.theme-light .rec {
+  display: none;
 }

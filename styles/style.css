@@ -3,12 +3,6 @@ ul {
   list-style-type: none;
 }
 
-
-img {
-  width: 100px;
-}
-
-
 .page {
   background-image: url(../images/cover-image-dark.png);
   background-color: var(--background-color);
@@ -16,24 +10,57 @@ img {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0px;
+  padding: 0 var(--padding-main-page);  /* ПОменять в разрешениях */
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
+.text {
+  font-family: var(--font-family);
+  font-weight: var(--text-normal);
+}
+
+.text-bold {
+  font-family: var(--font-family);
+  font-weight: var(--text-bold);
+}
+
+/* Header */
+
 .header {
-  position: relative;
   display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   min-height: 668px;
-  grid-template-rows: repeat(3, min-inline-size);
-  margin: 10px;
+  margin: 0 0 40px 0;
+  align-items: center;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inset: 10px 10px auto auto;
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inset: auto auto 10px 10px;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
   align-items: flex-end;
   text-align: center;
+  line-height: 23px;
 }
 
 .header__theme-menu-button { 
@@ -48,7 +75,6 @@ img {
   font-size: 18px;
   line-height: 18px;
   text-align: center;
-  
 }
 
 .header__theme-menu-button:hover {
@@ -92,13 +118,110 @@ img {
   box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
-.headline {
-  font-size: var(--headline-font-size);
+.headline-hero {
+  color: var(--headline-text-color);
+  font-weight: var(--text-bold);
+  font-size: var(--headline-font-size); 
   font-family: var(--font-family);
-  font-weight: 700;
-  line-height: 95.7px;
-  text-align: left;
-  text-decoration-skip-ink: none;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 96px;
+  text-shadow: 4px 4px 0 var(--headline-shadow-color);
 }
 
+.headline-hero-description {
+  color: #000028;
+  background-color: var(--accent-color);
+  height: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-family);
+  height: min-content;
+}
+
+/* Main */
+
+.sections {
+  margin: 0 0 var(--article-ul-margin) 0; /* ПОменять в разрешениях */
+}
+
+.article-description {
+  display: block;
+  font-size: 18px;
+  color: var(--accent-color);
+  margin: 20px 0 0 0;
+}
+
+.card-description {
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--text-headline-color);
+  background-color: var(--accent-color);
+  margin: 20px 0 0 0;
+}
+
+
+.card-text {
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--text-color);
+  margin: 10px 0 0 0;
+}
+
+.link {
+  text-shadow: 2px 2px 0 var(--headline-shadow-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+/* Pictures */
+
+.picture {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 7px;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  height: 667px;
+  margin: var(--footer-margin) 0 0 0; /* Поменять в разрешении */
+  align-items: center;
+  justify-content: center;
+}
+
+.footer.decorated-zone {
+  position: relative;
+}
+
+.footer.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inset: 10px 0 auto auto;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+}
+
+.footer.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inset: auto auto 10px 0;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}

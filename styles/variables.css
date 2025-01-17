@@ -3,9 +3,19 @@
   и их переопределение под различные устройства
 */
 :root {
+  --text-color: #F1B2CE;
+  --text-headline-color: #000028;
   --accent-color: #FF0070;
-  --font-family: IBM Plex mono, sans-serif;
+  --font-family: "IBM Plex mono", sans-serif, monospace;
   --text-normal: 400;
+  --text-bold: 700;
   --background-color: #000028;
   --headline-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --headline-text-color: #DB00FF;
+  --headline-shadow-color: #FF0070;
+
+
+  --padding-main-page: 10px;
+  --article-ul-margin: 50px;
+  --footer-margin: 40px;
 }
