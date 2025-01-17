@@ -4,15 +4,18 @@
 */
 :root {
   --text-color: #F1B2CE;
-  --text-headline-color: #000028;
+  --menu-color: #FF0070;
+  --decoration-color: #FF0070; /* Не нужно в light.css */
+  --headline-text-color: #DB00FF;
+  --headline-shadow-color: #FF0070;
   --accent-color: #FF0070;
+  --text-accent-color: #000028;
+  --background-color: #000028;
+  --article-color: var(--accent-color);
   --font-family: "IBM Plex mono", sans-serif, monospace;
   --text-normal: 400;
   --text-bold: 700;
-  --background-color: #000028;
   --headline-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --headline-text-color: #DB00FF;
-  --headline-shadow-color: #FF0070;
 
 
   --padding-main-page: 10px;

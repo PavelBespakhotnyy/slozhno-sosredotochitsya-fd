@@ -40,8 +40,8 @@ ul {
   inset: 10px 10px auto auto;
   width: 25px;
   height: 25px;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--decoration-color);
+  border-top: 1px solid var(--decoration-color);
 }
 
 .decorated-zone::after {
@@ -50,8 +50,8 @@ ul {
   inset: auto auto 10px 10px;
   width: 25px;
   height: 25px;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--decoration-color);
+  border-bottom: 1px solid var(--decoration-color);
 }
 
 .header__theme-menu-list {
@@ -68,7 +68,7 @@ ul {
   text-transform: lowercase;
   font-family: var(--font-family);
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--menu-color);
   border: 1px solid transparent;
   text-decoration: none;
   display: inline-block;
@@ -78,7 +78,7 @@ ul {
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--menu-color);
 }
 
 .header__theme-menu-button:focus {
@@ -86,11 +86,11 @@ ul {
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--menu-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--menu-color);
   pointer-events: none;
 }
 
@@ -103,7 +103,7 @@ ul {
   top: 10px;
   right: 19px;
   display: flex;
-  color: var(--accent-color);
+  color: var(--decoration-color);
   gap: 10px;
   justify-content: center;
   align-items: center;
@@ -114,8 +114,8 @@ ul {
   width: 9px;
   height: 9px;
   border-radius: 4.5px;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--decoration-color);
+  box-shadow: 0 0 4px 2px var(--decoration-color);
 }
 
 .headline-hero {
@@ -128,7 +128,7 @@ ul {
 }
 
 .headline-hero-description {
-  color: #000028;
+  color: var(--text-accent-color);
   background-color: var(--accent-color);
   height: 100%;
   font-size: 18px;
@@ -146,14 +146,14 @@ ul {
 .article-description {
   display: block;
   font-size: 18px;
-  color: var(--accent-color);
+  color: var(--article-color);
   margin: 20px 0 0 0;
 }
 
 .card-description {
   font-size: 18px;
   line-height: 23.4px;
-  color: var(--text-headline-color);
+  color: var(--text-accent-color);
   background-color: var(--accent-color);
   margin: 20px 0 0 0;
 }
@@ -172,7 +172,7 @@ ul {
 }
 
 .link:hover {
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--menu-color);
 }
 
 .link:focus {
@@ -180,7 +180,7 @@ ul {
 }
 
 .link:focus-visible {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--menu-color);
 }
 
 /* Pictures */
@@ -212,8 +212,8 @@ ul {
   top: 10px;
   width: 25px;
   height: 25px;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--decoration-color);
+  border-top: 1px solid var(--decoration-color);
 }
 
 .footer.decorated-zone::after {
@@ -222,6 +222,6 @@ ul {
   inset: auto auto 10px 0;
   width: 25px;
   height: 25px;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--decoration-color);
+  border-bottom: 1px solid var(--decoration-color);
 }
