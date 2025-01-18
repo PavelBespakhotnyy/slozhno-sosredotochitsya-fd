@@ -17,8 +17,20 @@
   --text-bold: 700;
   --headline-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 
-
+  --pictures-margin: 10px;
+  --header-margin: 40px;
   --padding-main-page: 10px;
   --article-ul-margin: 50px;
   --footer-margin: 40px;
+}
+
+@media (width >= 768px) {
+  :root {
+    --headline-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --pictures-margin: 20px;
+    --header-margin: 74px;
+    --padding-main-page: 20px;
+    --article-ul-margin: 80px;
+    --footer-margin: 60px;
+  }
 }
