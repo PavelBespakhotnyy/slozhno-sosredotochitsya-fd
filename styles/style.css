@@ -10,7 +10,7 @@ ul {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  padding: 0 var(--padding-main-page) 0 var(--padding-main-page);  /* ПОменять в разрешениях */
+   /* ПОменять в разрешениях */
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -28,14 +28,13 @@ ul {
 /* Header */
 
 .header {
-  height: calc(100vh - (var(--header-padding-top)));
+  height: 100vh;
   min-height: 658px;  /* Не 668px из-за 10px padding-top */
-  width: calc(100vw - (var(--padding-main-page) * 2));
+  width: 100vw;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
-  padding-top: var(--header-padding-top);
-  margin-bottom: var(--header-margin-bottom);
+  padding: var(--padding-main-page);
 }
 
 /* Menu */
@@ -103,11 +102,11 @@ ul {
 }
 
 .header.decorated-zone::before {
-  inset: var(--padding-main-page) 0 auto auto;
+  inset: var(--padding-main-page) var(--padding-main-page) auto auto;
 }
 
 .header.decorated-zone::after {
-  inset: auto auto 0 0;
+  inset: auto auto var(--padding-main-page) var(--padding-main-page);
 }
 
 /* REC */
@@ -119,7 +118,7 @@ ul {
   position: absolute;
   color: var(--decoration-color);
   font-size: 18px;
-  inset: var(--padding-main-page) 9px auto auto;
+  inset: var(--padding-main-page) calc(9px + var(--padding-main-page)) auto auto;
 }
 
 /* REC's red dot */
@@ -149,6 +148,10 @@ ul {
 }
 /* Header's END */
 /* Main */
+main {
+  padding: var(--main-padding-top-bottom) var(--padding-main-page);
+}
+
 .articles-group {
   display: flex;
   flex-direction: column;
@@ -214,7 +217,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--pictures-gap);
-  margin-bottom: var(--pictures-margin-bottom);
 }
 
 .pictures-list {
@@ -226,9 +228,12 @@ ul {
 /* Footer */
 .footer {
   height: 100vh;
+  min-height: 668px;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 var(--padding-main-page);
 }
 
 /* Corners */
@@ -237,17 +242,17 @@ ul {
 }
 
 .footer.decorated-zone::before {
-  inset: var(--padding-main-page) 0 auto auto;;
+  inset: var(--padding-main-page) var(--padding-main-page) auto auto;;
 }
 
 .footer.decorated-zone::after {
-  inset: auto auto var(--padding-main-page) 0 ;;
+  inset: auto auto var(--padding-main-page) var(--padding-main-page) ;;
 }
 
 @media (width >= 768px) {
   /* Headline */
   .header {
-    height: calc(1024px - var(--header-padding-top));
+    min-height: 1024px;
     max-width: 1440px;
   }
 
@@ -325,7 +330,7 @@ ul {
 
 @media (width >= 1024px) {
   .header {
-    height: calc(768px - var(--header-padding-top));
+    min-height: 768px;
     max-width: 1440px;
   }
 
