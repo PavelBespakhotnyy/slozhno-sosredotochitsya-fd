@@ -45,7 +45,7 @@
     background-image: url(../images/cover-image-light.png);
   }
 
-  .theme-light .rec {
+  .rec {
     display: none;
   }
 }
