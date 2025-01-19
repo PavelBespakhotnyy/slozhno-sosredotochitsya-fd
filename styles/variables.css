@@ -17,20 +17,27 @@
   --text-bold: 700;
   --headline-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 
-  --pictures-margin: 10px;
-  --header-margin: 40px;
+  --menu-gap: 10px; /* Dont change with resolution */
+  
+  --rec-right-inset: 19px;
+  --article-group-gap: 50px;
+  --pictures-gap: 10px;
+  --header-margin-bottom: 50px;   /* Не 40 из-за header-padding-top (в других разрешениях возможно придется ставить не 60px, а 80px*/
   --padding-main-page: 10px;
-  --article-ul-margin: 50px;
-  --footer-margin: 40px;
+  --header-padding-top: var(--padding-main-page);
+  --article-margin-bottom: 50px;
+  --pictures-margin-bottom: 40px;
 }
 
 @media (width >= 768px) {
   :root {
     --headline-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --pictures-margin: 20px;
-    --header-margin: 74px;
+    --pictures-gap: 20px;
+    --header-margin-bottom: 80px;
     --padding-main-page: 20px;
-    --article-ul-margin: 80px;
-    --footer-margin: 60px;
+    --article-margin-bottom: 80px;
+    --pictures-margin-bottom: 60px;
+    --rec-right-inset: 29px;
+    --article-group-gap: 80px;
   }
 }

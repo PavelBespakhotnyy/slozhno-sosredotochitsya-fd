@@ -14,6 +14,7 @@ ul {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
+/* Text assets */
 .text {
   font-family: var(--font-family);
   font-weight: var(--text-normal);
@@ -27,60 +28,41 @@ ul {
 /* Header */
 
 .header {
+  height: calc(100vh - (var(--header-padding-top)));
+  min-height: 658px;  /* Не 668px из-за 10px padding-top */
+  width: calc(100vw - (var(--padding-main-page) * 2));
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  min-height: 668px;
-  margin: 0 0 var(--header-margin) 0;
   align-items: center;
+  padding-top: var(--header-padding-top);
+  margin-bottom: var(--header-margin-bottom);
 }
 
-.header.decorated-zone {
-  position: relative;
-}
-
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  inset: 10px calc(var(--padding-main-page) - 10px) auto auto;
-  width: 25px;
-  height: 25px;
-  border-right: 1px solid var(--decoration-color);
-  border-top: 1px solid var(--decoration-color);
-}
-
-.decorated-zone::after {
-  content: "";
-  position: absolute;
-  inset: auto auto 10px calc(var(--padding-main-page) - 10px);
-  width: 25px;
-  height: 25px;
-  border-left: 1px solid var(--decoration-color);
-  border-bottom: 1px solid var(--decoration-color);
+/* Menu */
+.header__theme-menu {
+  display: flex;
+  justify-content: end;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  align-items: flex-end;
-  text-align: center;
-  line-height: 23px;
-}
-
-.header__theme-menu-button { 
-  width: 70px;
-  text-transform: lowercase;
-  font-family: var(--font-family);
-  background-color: transparent;
+  gap: var(--menu-gap);
   color: var(--menu-color);
-  border: 1px solid transparent;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  line-height: 18px;
-  text-align: center;
 }
 
+.header__theme-menu-button {
+  font-size: 18px;
+  width: 70px;
+  height: 26px;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+}
+
+/* Menu effects */
 .header__theme-menu-button:hover {
   border: 1px solid var(--menu-color);
 }
@@ -95,23 +77,52 @@ ul {
 
 .header__theme-menu-button_active {
   border: 1px solid var(--menu-color);
-  pointer-events: none;
 }
 
-.rec {
+/* Corners */
+.decorated-zone::before {
+  content: "";
   position: absolute;
-  font-family: var(--font-family);
-  font-size: 18px;
-  font-weight: var(--text-normal);
-  text-transform: uppercase;
-  inset: 10px var(--padding-main-page) auto auto;
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid var(--decoration-color);
+  border-top: 1px solid var(--decoration-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--decoration-color);
+  border-bottom: 1px solid var(--decoration-color);
+}
+
+.header.decorated-zone {
+  position: relative;
+}
+
+.header.decorated-zone::before {
+  inset: var(--padding-main-page) 0 auto auto;
+}
+
+.header.decorated-zone::after {
+  inset: auto auto 0 0;
+}
+
+/* REC */
+.rec {
   display: flex;
-  color: var(--decoration-color);
   gap: 10px;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  color: var(--decoration-color);
+  font-size: 18px;
+  inset: var(--padding-main-page) 9px auto auto;
 }
 
+/* REC's red dot */
 .rec:after {
   content: "";
   width: 9px;
@@ -121,58 +132,65 @@ ul {
   box-shadow: 0 0 4px 2px var(--decoration-color);
 }
 
+/* Headline */
+
 .headline {
+  font-size: var(--headline-font-size);
+  line-height: 96px;                           /* Change with resolution */
   color: var(--headline-text-color);
-  font-weight: var(--text-bold);
-  font-size: var(--headline-font-size); 
-  font-family: var(--font-family);
-  line-height: 96px;
   text-shadow: 4px 4px 0 var(--headline-shadow-color);
 }
 
 .headline-hero-description {
-  color: var(--text-accent-color);
-  background-color: var(--accent-color);
-  height: 100%;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: var(--font-family);
-  height: min-content;
-}
-
-/* Main */
-
-.sections {
-  margin: 0 0 var(--article-ul-margin) 0; /* ПОменять в разрешениях */
-}
-
-.article-description {
-  display: block;
-  font-size: 18px;
-  color: var(--article-color);
-  margin: 20px 0 0 0;
-}
-
-.card-title-style {
   font-size: 18px;
   line-height: 23.4px;
   color: var(--text-accent-color);
   background-color: var(--accent-color);
-
+}
+/* Header's END */
+/* Main */
+.articles-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--article-group-gap);
+  margin-bottom: var(--article-margin-bottom);
 }
 
-.card-margin {
-  margin: 20px 0 0 0;
+/* Article's Elements Styling */
+.article-description {
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--article-color);
+  margin-bottom: 20px;
 }
 
+.card-title {
+  margin-bottom: 10px;
+}
+
+.card-style {
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--text-accent-color);
+  background-color: var(--accent-color);
+}
 
 .card-text {
   font-size: 18px;
   line-height: 23.4px;
   color: var(--text-color);
-  margin: 10px 0 0 0;
+  margin-bottom: 20px;  /* Нам не нужен margin-bottom в последнем тексте артикля. Свойство ниже убирвает его*/
 }
 
+.article ul li:last-child p:last-child {
+  margin-bottom: 0;
+}
+
+.advice {
+  margin-bottom: 20px;
+}
+
+/* Styling links */
 .link {
   text-shadow: 2px 2px 0 var(--headline-shadow-color);
   text-decoration: none;
@@ -190,187 +208,117 @@ ul {
   border: 1px solid var(--menu-color);
 }
 
+/* End of Articles */
 /* Pictures */
+.pictures {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pictures-gap);
+  margin-bottom: var(--pictures-margin-bottom);
+}
 
-.picture {
-  width: 100%;
-  object-fit: cover;
-  margin-top: 7px;
+.pictures-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pictures-gap);
 }
 
 /* Footer */
-
 .footer {
+  height: 100vh;
   display: flex;
-  height: 667px;
-  margin: var(--footer-margin) 0 0 0; /* Поменять в разрешении */
   align-items: center;
   justify-content: center;
 }
 
+/* Corners */
 .footer.decorated-zone {
   position: relative;
 }
 
 .footer.decorated-zone::before {
-  content: "";
-  position: absolute;
-  inset: 10px 0 auto auto;
-  top: 10px;
-  width: 25px;
-  height: 25px;
-  border-right: 1px solid var(--decoration-color);
-  border-top: 1px solid var(--decoration-color);
+  inset: var(--padding-main-page) 0 auto auto;;
 }
 
 .footer.decorated-zone::after {
-  content: "";
-  position: absolute;
-  inset: auto auto 10px 0;
-  width: 25px;
-  height: 25px;
-  border-left: 1px solid var(--decoration-color);
-  border-bottom: 1px solid var(--decoration-color);
+  inset: auto auto var(--padding-main-page) 0 ;;
 }
 
 @media (width >= 768px) {
-  /* Header */
+  /* Headline */
   .header {
-    height: 1000px;
-    margin-top: 10px;
+    height: calc(1024px - var(--header-padding-top));
+    max-width: 1440px;
   }
 
-  .headline-hero {
+  .headline-hero{
     position: relative;
-    left: -20px;
+    left: calc(0px - var(--padding-main-page));
   }
 
   .headline-hero-description {
     width: 364px;
+    height: 117px;
     justify-self: end;
   }
 
-  .decorated-zone::before {
-    inset: 10px 0px auto auto;
-  }
-
-  .decorated-zone::after {
-    inset: auto auto 10px 0;
-  }
-
-  .rec {
-    inset: 12px 10px auto auto;
-  }
-
-  /* Main */
-  .article:not(.horizontal) {
+  /*Articles*/
+  /* Vertical */
+  .article.vertical {
     display: grid;
-    grid-template-columns: 256px 472px;
+    grid-template-columns: 256px auto;
   }
 
-  .article-description{
-    font-family: IBM Plex Mono;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 23.4px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    word-spacing: normal;
-  }
-
+  /* Horizontal */
   .article-description {
-    margin-top: 0;
-  }
-
-  /* Отступы */
-  /* Отступы для вертикальных артиклей */
-  .vertical ul li:first-of-type .card-margin:first-of-type {
-    margin: 0 0 0 0;
-  }
-
-  .vertical ul li:not(:first-of-type) .card-margin {
-    margin: 20px 0 0 0;
-  }
-
-  /* Отступы для горизонтальных артиклей */
-  .horizontal li:first-child .card-margin{
-    margin: 20px 0 0 0;
-  }
-
-  .horizontal .article-description {
     width: 236px;
   }
 
-  /* Отступы для  pictures */
-
-  .card-title-description {
-    margin: 0;
-  }
-
+  /* Pictures */
   .pictures-list {
+    max-width: 100%;
     display: grid;
-    grid-template-areas:
-      "picture1 picture1 picture2"
-      "picture3 picture4 picture2"
-      "picture3 picture5 picture5";
     grid-template-columns: auto auto auto;
-    gap: 20px;
-    width: 728px;
-    margin-top: var(--pictures-margin);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+            "a a b"
+            "c d b"
+            "c e e";
+    
   }
-  
-  .pictures-list img:nth-child(1) {
+
+.picture {
+  object-fit: cover;
+}
+
+  .picture:nth-child(1){
+    grid-area: a;
     width: 479px;
     height: 192px;
-    grid-area: picture1;
   }
-  
-  .pictures-list img:nth-child(2) {
+
+  .picture:nth-child(2){
+    grid-area: b;
     width: 229px;
     height: 442px;
-    grid-area: picture2;
   }
-  
-  .pictures-list img:nth-child(3) {
+
+  .picture:nth-child(3){
+    grid-area: c;
     width: 229px;
     height: 568px;
-    grid-area: picture3;
   }
-  
-  .pictures-list img:nth-child(4) {
+
+  .picture:nth-child(4){
+    grid-area: d;
     width: 230px;
     height: 230px;
-    grid-area: picture4;
   }
-  
-  .pictures-list img:nth-child(5) {
+
+  .picture:nth-child(5){
+    grid-area: e;
     width: 479px;
     height: 318px;
-    grid-area: picture5;
-  }
-  
-  /* Общие стили для всех изображений */
-  .pictures-list img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin: 0;
   }
 
-  /* Footer */
-  .footer {
-    margin: var(--footer-margin) 0 0 0;
-    justify-content: center;
-    width: 728px;
-    height: 1024px
-  }
-
-  .footer.decorated-zone::before {
-    inset: 18px 0 auto auto;
-  }
-
-  .footer.decorated-zone::after {
-    inset:  auto auto 18px 0;
-  }
 }
